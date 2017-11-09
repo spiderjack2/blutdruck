@@ -1,1 +1,6 @@
 <h1>Mein Blutdruck:</h1>
+<%= link_to "Neuen Wert Eingeben", new_item_path, :class => "btn btn-default" %>
+
+<% @items.each do |item| %>
+<h2><%= item.bloodpressure %> : <%= item.heartrate %>BPM : Info:<%= item.description %></h2>
+<% end %>
