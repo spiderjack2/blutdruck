@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bloodpressure: MyString
+  heartrate: 1
+  description: MyText
+
+two:
+  bloodpressure: MyString
+  heartrate: 1
+  description: MyText
