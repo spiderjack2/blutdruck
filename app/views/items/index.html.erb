@@ -4,5 +4,6 @@
 <hr>
 <hr>
 <% @items.each do |item| %>
-<h5><%= link_to "edit", item %> <%= item.created_at.strftime("%d.%m.%y - %H:%M Uhr") %> : <strong><%= item.bloodpressure %></strong> : <strong><%= item.heartrate %></strong>BPM : Info:<%= item.description %></h5>
+<h5><%= link_to item do %><i class="fa fa-pencil" aria-hidden="true"></i>
+<% end %> <%= item.created_at.strftime("%d.%m.%y - %H:%M Uhr") %> : <strong><%= item.bloodpressure %></strong> : <strong><%= item.heartrate %></strong>BPM : Info:<%= item.description %></h5>
 <% end %>

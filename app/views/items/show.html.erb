@@ -5,5 +5,8 @@
 <h2>Herzfrequenz: <%= @item.heartrate %></h2>
 <h2>Bemerkung: <%= @item.description %></h2>
 <hr>
-<%= link_to "Ändern", edit_item_path %> | 
-<%= link_to "Löschen", item_path(@item), method: :delete, data: { confirm: "Bist Du sicher?" } %>
+<h1><%= link_to edit_item_path do %>
+<i class="fa fa-pencil" aria-hidden="true"></i>
+<% end %> | <%= link_to item_path(@item), method: :delete, data: { confirm: "Bist Du sicher?" } do %>
+<i class="fa fa-trash-o" aria-hidden="true"></i>
+<% end %></h1>
