@@ -1,0 +1,9 @@
+<%= link_to "Zurück", root_path, :class => "btn btn-default"%><br><br>
+<h4>Mein Blutdruck am <%= @item.created_at.strftime("%d.%m.%y - %H:%M Uhr") %></h4>
+<hr>
+<h2>Blutdruck: <%= @item.bloodpressure %></h2>
+<h2>Herzfrequenz: <%= @item.heartrate %></h2>
+<h2>Bemerkung: <%= @item.description %></h2>
+<hr>
+<%= link_to "Ändern", edit_item_path %> | 
+<%= link_to "Löschen", item_path(@item), method: :delete, data: { confirm: "Bist Du sicher?" } %>

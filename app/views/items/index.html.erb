@@ -1,7 +1,8 @@
+<p style="font-size:10px; color: #cccccc;"><%= @date %></p>
 <h1>Mein Blutdruck:</h1><br>
 <%= link_to "Neuen Wert Eingeben", new_item_path, :class => "btn btn-default" %><br>
 <hr>
-
+<hr>
 <% @items.each do |item| %>
-<h5></h5><%= item.bloodpressure %> : <%= item.heartrate %>BPM : Info:<%= item.description %></h5>
+<h5><%= link_to "edit", item %> <%= item.created_at.strftime("%d.%m.%y - %H:%M Uhr") %> : <strong><%= item.bloodpressure %></strong> : <strong><%= item.heartrate %></strong>BPM : Info:<%= item.description %></h5>
 <% end %>

@@ -1,22 +1,47 @@
 class ItemsController < ApplicationController
+    before_action :find_item, only: [:show, :edit, :update, :destroy]
+    
     def index
         @items = Item.all.order("created_at DESC")
+        @date = Time.now.strftime("%d.%m.%y - %H:%M Uhr")
     end
     
     def new
         @item = Item.new
     end
     
-        def create
-            @item = Item.new(item_params)
-            if @item.save
-                redirect_to root_path
-            else
-                render 'new'
+    def create
+        @item = Item.new(item_params)
+        if @item.save
+            redirect_to root_path
+        else
+            render 'new'
+    end
+end
+    def show
+    end
+    
+    def destroy
+        @item.destroy
+        redirect_to root_path
+    end
+    
+    def edit
+    end
+    
+    def update
+        if @item.update(item_params)
+            redirect_to root_path
+        else render 'edit'
         end
     end
+    
     private
     def item_params
         params.require(:item).permit(:bloodpressure, :heartrate, :description)
+    end
+    
+    def find_item
+        @item = Item.find(params[:id])
     end
 end
